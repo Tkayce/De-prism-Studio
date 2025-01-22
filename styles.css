@@ -851,6 +851,99 @@ body {
 }
    
 
+/* About page styling */
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* About Section Styles */
+.about-section {
+  background-color: #f8f9fa;
+  padding: 60px 20px;
+}
+
+.about-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #0d6efd;
+}
+
+.about-section h3 {
+  font-size: 1.75rem;
+  margin-top: 30px;
+  color: #495057;
+}
+
+.about-section p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  font-size: 1.125rem;
+  line-height: 1.8;
+}
+
+.about-section ul li {
+  margin-bottom: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-section {
+      padding: 40px 15px;
+  }
+
+  .about-section h2 {
+      font-size: 2rem;
+  }
+
+  .about-section h3 {
+      font-size: 1.5rem;
+  }
+
+  .about-section p,
+  .about-section ul {
+      font-size: 1rem;
+      line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+      padding: 30px 10px;
+  }
+
+  .about-section h2 {
+      font-size: 1.8rem;
+  }
+
+  .about-section h3 {
+      font-size: 1.25rem;
+  }
+
+  .about-section p,
+  .about-section ul {
+      font-size: 0.9rem;
+  }
+}
+
+
 /* Animations */
 /* Add sliding animation to the h2 portfolio title */
 @keyframes slideFromLeftToRight {

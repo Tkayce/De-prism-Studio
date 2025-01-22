@@ -93,3 +93,15 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 });
+
+
+// About Js
+// Smooth scroll to the About section
+document.querySelectorAll('a[href^="#about"]').forEach(anchor => {
+    anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth"
+        });
+    });
+});
