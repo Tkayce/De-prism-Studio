@@ -1,0 +1,923 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: black !important ;
+  color: white;
+}
+
+/* Navbar */
+/* Make the navbar sticky */
+.navbar {
+position: sticky !important;
+top: 0;
+z-index: 1000; /* Ensures the navbar stays on top */
+}
+
+/* Optional: Change text color to white */
+.navbar-dark .navbar-nav .nav-link {
+color: white; /* Ensures all links are white */
+}
+
+/* Ensure navbar brand stays at the left */
+.navbar-brand {
+margin-right: auto; /* Forces the brand to the left */
+}
+
+/* Add margin between nav items to space them out */
+.navbar-nav .nav-item {
+margin-left: 30px; /* Adjust this value for more/less space */
+}
+
+/* Optional: Change hover color */
+.navbar-dark .navbar-nav .nav-link:hover {
+color: #f1f1f1; /* Lighter white color on hover */
+}
+
+/* PhotoGrid Section */
+/* Custom styles for portfolio section */
+body {
+background-color: black;
+color: white;
+}
+
+#portfolio {
+padding-top: 5rem;
+padding-bottom: 5rem;
+}
+#portfolio h2 {
+animation: slideFromLeftToRight 25s linear infinite;
+white-space: nowrap; /* Prevents text from breaking into a new line */
+}
+
+#portfolio .container {
+max-width: 1200px;
+}
+
+/* Prevent images from stretching or breaking aspect ratio */
+.portfolio-item img {
+width: 100%; /* Ensure the image takes full width of the container */
+height: 200px; /* Maintain aspect ratio */
+object-fit: cover; /* Ensures the image fills the space without distortion */
+border-radius: 8px; /* Optional for rounded corners */
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+.modal-dialog {
+    max-width: 90%;
+    width: auto;
+}
+}
+
+.portfolio-item img:hover {
+transform: scale(1.05);
+}
+
+/* Prevent background from shifting */
+body.modal-open {
+overflow: hidden;
+padding-right: 0 !important;
+}
+
+/* Adjust modal content to fit within the screen */
+
+.modal {
+display: none; /* Hidden by default */
+position: fixed;
+z-index: 1050;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.8);
+overflow: hidden; /* Prevent scrolling on modal */
+}
+
+body.modal-open {
+overflow: hidden; /* Prevent scrolling when modal is open */
+}
+
+.modal-content {
+background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+border: none;
+border-radius: 8px;
+overflow: hidden;
+}
+
+
+@media (max-width: 768px) {
+.modal-content {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 90%;
+}
+}
+
+
+.modal-content img {
+max-width: 100%;
+height: auto;
+}
+
+.modal-content p {
+margin-top: 10px;
+font-size: 16px;
+color: #333;
+}
+
+.image-text {
+font-size: 18px;
+color: #fff;
+}
+
+
+.modal-dialog {
+margin: 0 auto;
+max-width: 90%;
+}
+
+.image-modal {
+display: none; /* Hidden by default */
+position: fixed;
+top: 0;
+left: 0;
+width: 100vw;
+height: 100vh;
+background-color: rgba(0, 0, 0, 0.8); /* Black semi-transparent background */
+justify-content: center;
+align-items: center;
+z-index: 1050; /* High z-index to overlay other elements */
+} 
+
+/* Image styles */
+.image-modal img {
+max-width: 90%;
+height: auto;
+border-radius: 10px;
+cursor: pointer; /* Add pointer cursor for dismissal */
+} 
+
+/* Text styles */
+.image-modal-text {
+color: #fff;
+margin-top: 1rem;
+text-align: center;
+font-size: 1rem;
+} 
+
+
+/* Ensure modal is responsive */
+@media (max-width: 768px) {
+.image-modal img {
+  max-width: 80%;
+}
+.image-modal-text {
+  font-size: 0.9rem;
+}
+} 
+
+/* Modal content (image and text) */
+.image-modal-content {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 1rem;
+background-color: transparent;
+border-radius: 5px;
+} 
+
+/* Image styles */
+.image-modal img {
+max-width: 90%;
+height: auto;
+border-radius: 10px;
+cursor: pointer; /* Add pointer cursor for dismissal */
+} 
+
+/* Reduce black background area for the modal */
+#imageModal .modal-dialog {
+max-width: fit-content; /* Fit content width of image and text */
+margin: auto; /* Center the modal */
+}
+
+/* Remove any default background applied by Bootstrap */
+#imageModal .modal-content {
+background-color: transparent; /* No background for the modal content */
+border: none; /* Remove border around modal */
+box-shadow: none; /* Remove shadow */
+}
+
+/* Center the image and text */
+#imageModal .modal-body {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0; /* Remove extra padding */
+}
+
+
+#modalImage {
+max-width: 90%;
+height: auto;
+margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+#modalImage {
+  max-width: 80%; /* Reduce size for mobile */
+}
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+#modalImage {
+  max-width: 85%; /* Slightly larger for tablets */
+}
+}
+
+@media (min-width: 1201px) {
+#modalImage {
+  max-width: 70%; /* Smaller image for large screens */
+}
+}
+
+
+body.modal-open {
+overflow: hidden;
+padding-right: 0 !important;
+} 
+
+
+.modal-body {
+text-align: center;
+color: white; /* Ensure text is visible */
+} 
+
+.modal.active {
+display: block; /* Ensure modal appears */
+}
+
+
+.modal-body img {
+max-width: 100%;
+max-height: 70vh;
+object-fit: contain;
+margin-bottom: 10px;
+transition: transform 0.3s ease-in-out; /* Smooth zoom animation */
+}
+
+
+.modal-body p {
+font-size: 1.2em;
+margin-top: 15px;
+transition: transform 0.3s ease-in-out; /* Smooth zoom animation */
+}
+
+.modal-body:hover img,
+.modal-body:hover p {
+transform: scale(1.05); /* Slight zoom effect */
+}
+
+.modal-backdrop {
+z-index: 1040; /* Ensure it stays below the modal */
+}
+
+.modal {
+z-index: 1050; /* Ensure it stays above the backdrop */
+}
+
+
+.image{
+  height: 500px;
+  width: 100px;
+  justify-content: center;
+  transform: translateX(-40rem);
+}
+
+/* Hero section */
+
+/* Hero Section */
+.hero {
+height: 100vh;
+background: url('/pexels-derice-jason-fahnkow-745824-1595241.jpg') no-repeat center center/cover;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+}
+.hero-content h1 {
+  color: #fff;
+  /* animation: fadeInSlideDown 10s ease;  */
+  transform: translateY(150%); /* Ensures the element stays in the final position after animation */
+  
+}
+.hero-content h1.animate {
+visibility: visible; /* Make visible during animation */
+animation: fadeInSlideDown 10s ease forwards;
+}
+
+
+.slideUp {
+  transform: translateY(px); /* Start below its final position */
+  opacity: 0;                /* Fully transparent */
+  animation: slideUp 1.5s ease-in-out forwards; /* Animation over 1.5s */
+  color: whitesmoke;
+}
+
+.zoomInSlideDown {
+transform: scale(0.8); /* Start smaller */
+opacity: 0; /* Start invisible */
+animation: zoomInSlideDown 1.5s ease-in-out forwards; /* Apply both zoomIn and slideDown in one animation */
+
+background-color: transparent; /*Make the background transparent  */
+color: transparent; /* White text */
+padding: 12px 30px; /* Adjust padding for better size */
+font-size: 16px; /* Increase font size */
+font-weight: bold; /* Make text bold */
+border: 5px solid white; /* White border around the button */
+border-radius: 25px; /* Rounded corners */
+text-transform: uppercase; /* Make text uppercase */
+text-decoration: none; /* Remove underline */
+-webkit-text-stroke: 1px white; /* Add white border lines to text */
+-webkit-text-fill-color: transparent; /* Ensure text fill is transparent */
+ box-shadow: 0 4px 8px rgba(0, 0, 2);
+ transition: all 0.3s ease;/* Smooth tran0, 0.sition for hover effects */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+}
+
+.zoomInSlideDown:hover {
+background-color: rgba(255, 255, 255, 0.1); /*Slight transparent white background on hover */
+box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /*Stronger shadow on hover */
+transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+.hero-content .btn {
+  margin-top: 20px;
+}
+/* Fade-In and Fade-Out Animation */
+.slideInOut {
+  display: inline-block;
+font-size: 2.5rem; /* Adjust size as needed */
+font-weight: bold;
+color: #333;
+opacity: 0; /* Start hidden */
+transform: translateX(-100%); /* Start from the left */
+animation: slideInOut 10s ease-in-out infinite; /* Loop the animation */
+}
+
+/* About Us Section Styles */
+#about {
+background-color: #000 !important; /* Black background */
+color: #fff !important; /* Bright white text */
+padding: 3rem 1rem; /* Add padding for spacing */
+}
+
+#about h2 {
+font-size: 2.5rem !important; /* Larger title font size */
+font-weight: bold !important;
+color: #fff !important; /* Bright white title */
+margin-bottom: 1.5rem !important;
+text-align: center !important;
+}
+
+#about p {
+font-size: 1.2rem !important; /* Larger font size for better readability */
+line-height: 1.8 !important; /* Increased line height for better spacing */
+color: #fff !important; /* Bright white text */
+text-align: center !important; /* Center align the text */
+margin-bottom: 1.5rem !important;
+}
+
+#about .btn-primary {
+background-color: #000 !important; /* Black button */
+color: #fff !important; /* Bright white text */
+border: 2px solid #fff !important; /* White border for emphasis */
+padding: 0.75rem 1.5rem !important; /* Add padding to the button */
+font-size: 1.1rem !important; /* Slightly larger button text */
+transition: all 0.3s ease !important;
+}
+
+#about .btn-primary:hover {
+background-color: #fff !important; /* White background on hover */
+color: #000 !important; /* Black text on hover */
+}
+
+/* Team Section */
+/* CEO Section */
+.section-title {
+text-align: center;
+font-size: 2.5em;
+color: #fff;
+margin-bottom: 40px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+.ceo {
+text-align: center;
+margin-bottom: 50px;
+}
+
+.ceo-img-container {
+width: 250px; /* Larger CEO image size */
+height: 250px;
+margin: 0 auto 20px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.ceo-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.ceo h3 {
+font-size: 2em;
+margin: 10px 0;
+text-transform: uppercase;
+}
+
+.ceo p {
+font-size: 1.3em;
+color: #bbb;
+}
+
+/* Team Members Section */
+.team-members {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding-left: 40px;
+gap: 30px;
+}
+
+.team-member {
+display: flex;
+align-items: center;
+gap: 20px;
+}
+
+.team-img-container {
+width: 120px; /* Larger size for smaller team images */
+height: 120px;
+border-radius: 50%;
+overflow: hidden;
+}
+
+.team-img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.team-info h3 {
+font-size: 1.5em;
+color: #fff;
+margin: 0;
+text-transform: uppercase;
+}
+
+.team-info p {
+font-size: 1em;
+color: #bbb;
+margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+.ceo-img-container {
+    width: 200px; /* Adjusted size for smaller screens */
+    height: 200px;
+}
+
+.team-img-container {
+    width: 100px; /* Adjusted size for smaller screens */
+    height: 100px;
+}
+}
+
+/* Testinonial */
+/* General Styles */
+body {
+background-color: #000;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+color: #fff;
+}
+
+/* Section Title */
+.section-title {
+text-align: center;
+font-size: 2.5em;
+color: #fff;
+margin-bottom: 40px;
+text-transform: uppercase;
+font-weight: bold;
+letter-spacing: 2px;
+}
+
+/* Testimonials Section */
+.testimonials {
+padding: 50px 20px;
+max-width: 1200px;
+margin: 0 auto;
+}
+
+.testimonial-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 20px;
+}
+
+.testimonial {
+background-color: #222;
+border-radius: 10px;
+padding: 20px;
+text-align: center;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+color: #ccc;
+transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial:hover {
+transform: translateY(-5px);
+box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+}
+
+.testimonial p {
+font-size: 1.2em;
+margin-bottom: 10px;
+line-height: 1.5;
+}
+
+.testimonial h4 {
+font-size: 1.1em;
+color: #fff;
+margin-top: 10px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+.testimonial-grid {
+    grid-template-columns: 1fr;
+}
+
+.testimonial {
+    padding: 15px;
+}
+
+.testimonial p {
+    font-size: 1em;
+}
+}
+
+/* Contact section */
+#contactForm {
+  display: none;
+  position: fixed;
+  right: 16px; /* Aligns with the message icon */
+  bottom: 80px; /* Spaced above the message icon */
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  z-index: 1001;
+  max-width: 90%; /* Responsive on smaller screens */
+  box-sizing: border-box;
+}
+
+/* Message Icon (Skyblue, positioned at the bottom-right of the page) */
+/* Sticky Message Icon */
+/* General Body Settings */
+html, body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include borders and padding in size calculations */
+  width: 100%; /* Prevent overflow on small screens */
+  height: 100%; /* Ensure full height */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Sticky Message Icon */
+#messageIcon {
+  position: fixed;
+  right: 16px; /* Ensures alignment within the viewport */
+  bottom: 16px; /* Consistent spacing from the bottom */
+  background-color: skyblue;
+  color: white;
+  padding: 15px;
+  border-radius: 50%; /* Circular appearance */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 1002; /* Higher than other elements */
+  width: 50px; /* Fixed size for consistency */
+  height: 50px; /* Matches the width for a perfect circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Prevents content overflow */
+  transition: transform 0.3s ease; /* Adds smooth animation */
+}
+
+#messageIcon:hover {
+  background-color: #4682B4; /* Slightly darker on hover */
+  transform: scale(1.1); /* Add a subtle hover effect */
+}
+
+/* Prevent Message Icon Overflow on Small Screens */
+@media screen and (max-width: 768px) {
+  #messageIcon {
+      right: 10px;
+      bottom: 10px;
+  }
+
+  #contactForm {
+      right: 10px;
+      bottom: 80px;
+      width: 90%;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  #messageIcon {
+      right: 8px; /* Tighter alignment for very small screens */
+      bottom: 8px;
+      width: 40px; /* Adjust icon size */
+      height: 40px;
+      padding: 10px; /* Maintain circular shape */
+  }
+
+  #contactForm {
+      right: 8px; /* Align with smaller message icon */
+      bottom: 80px;
+      width: 95%; /* Further adjust width */
+      padding: 15px; /* Compact padding */
+  }
+}
+
+
+
+/* Close Button Inside Contact Form (Small Size at the Top-Right) */
+#closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+}
+
+
+
+#closeBtn:hover {
+  background-color: #f0f0f0;
+}
+
+/* Input and Textarea Styling */
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+/* Button Styling */
+#contactForm button {
+  width: 100%;
+  padding: 10px;
+  background-color: #87CEEB;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#contactForm button:hover {
+  background-color: #4682B4; /* Darker blue on hover */
+}
+
+/* Media Queries for Mobile Devices */
+
+/* For tablets and mobile screens above 768px */
+@media screen and (max-width: 768px) {
+  #contactForm {
+      right: 10px; /* Adjust for smaller screens */
+      bottom: 50px;
+      width: 90%; /* Ensure the form doesn't exceed the screen width */
+  }
+
+  #contactForm h3 {
+      font-size: 16px;
+  }
+
+  #contactForm input,
+  #contactForm textarea {
+      font-size: 14px;
+  }
+
+  #contactForm button {
+      font-size: 14px;
+  }
+  #contactForm button:hover {
+    background-color: #4682B4; /* Darker blue on hover */
+  }
+}
+  #messageIcon {
+    right: 10px;
+    bottom: 10px;
+}
+#messageIcon {
+  right: 10px;
+  bottom: 10px;
+  padding: 12px; 
+  
+  padding: 20px 10px;
+text-align: center;                           
+}
+ /* Footer Customization */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000; /* Black background for the page */
+  color: #fff;
+}
+
+
+.footer {
+  background-color: #333; /* Dark gray background */
+  color: #fff;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap; /* Makes it responsive */
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.footer-logo h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-links ul li {
+  margin: 0 10px;
+}
+
+.footer-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-social a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.footer-social a:hover {
+  color: #1e90ff; /* Sky blue on hover */
+}
+
+.footer-credit {
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+/* Media Query for Mobile Devices */
+@media screen and (max-width: 768px) {
+  .footer-container {
+      flex-direction: column; /* Stack items on top of each other */
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-links ul {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .footer-links ul li {
+      margin: 5px 0;
+  }
+
+  .footer-logo h2 {
+      font-size: 20px;
+  }
+
+  .footer-social a {
+      font-size: 16px;
+  }
+
+  .footer-credit {
+      font-size: 10px;
+  }
+}
+   
+
+/* Animations */
+/* Add sliding animation to the h2 portfolio title */
+@keyframes slideFromLeftToRight {
+0% {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+50% {
+  transform: translateX(50%); /* Moves halfway */
+  opacity: 1;
+}
+100% {
+  transform: translateX(100%); /* Move completely to the right end */
+  opacity: 0;
+}
+}
+
+@keyframes fadeInSlideDown {
+0% {
+    transform: translateY(-90%);
+    opacity: 0;
+}
+50% {
+    opacity: 1;
+}
+100% {
+    transform: translateY(150%);
+    opacity: 1;
+}
+}
+
+
+
+@keyframes slideInOut {
+  0% {
+      opacity: 1;
+      transform: translateX(-100%); /* Start from the left */
+  }
+    50% {
+      opacity: 1;
+      transform: translateX(100%); /* Move to the right */
+    }
+    80% {
+      opacity: 1; /* Keep the text visible while it's at the right end */
+      transform: translateX(100%); /* Stay at the right */
+    }
+    100% {
+      opacity: 0; /* Fade out at the right end */
+      transform: translateX(100%); /* Stay at the right */
+    }
+} 
+
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomInSlideDown {
+from {
+    transform: scale(0.8) translateY(-50px); /* Start smaller and above */
+    opacity: 0; /* Start invisible */
+}
+
+to {
+    transform: scale(1) translateY(70px); /* End at normal scale and position */
+    opacity: 1; /* Fade in */
+}
+}
+
